@@ -98,6 +98,8 @@
     // re-create WKWebView, since we need to update configuration
     WKWebView* wkWebView = [[WKWebView alloc] initWithFrame:self.engineWebView.frame configuration:configuration];
     wkWebView.UIDelegate = self.uiDelegate;
+    wkWebView.backgroundColor = UIColor.clearColor;
+    wkWebView.scrollView.backgroundColor = UIColor.clearColor;
     self.engineWebView = wkWebView;
 
     if (IsAtLeastiOSVersion(@"9.0") && [self.viewController isKindOfClass:[CDVViewController class]]) {
